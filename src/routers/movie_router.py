@@ -1,11 +1,9 @@
 
-from fastapi import HTTPException, Path, Query, APIRouter
-from fastapi.responses import RedirectResponse
+from fastapi import Path, Query, APIRouter
 from typing import List
 
 from src.models.movie_model import Movie
 from src.services import movie_service
-
 movie_router = APIRouter()
 
 
