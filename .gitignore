@@ -1,0 +1,35 @@
+# Entorno virtual
+.venv/
+venv/
+env/
+ENV/
+
+# Variables de entorno (¡NUNCA subir!)
+.env
+.env.local
+.env.*.local
+
+# Caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribución / empaquetado
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Base de datos local (opcional)
+*.db
+*.sqlite3
+
+# Logs
+*.log
