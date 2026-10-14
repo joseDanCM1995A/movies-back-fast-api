@@ -1,5 +1,5 @@
 from __future__ import annotations
-from fastapi import Header, Path, Query, APIRouter, Response
+from fastapi import Cookie, Header, Path, Query, APIRouter, Response
 from typing import Annotated, List, Optional
 
 from src.models.movie_model import Movie
@@ -8,8 +8,15 @@ movie_router = APIRouter()
 
 
 @movie_router.get('/', tags=['laboratory'])
-def get_movies(response: Response, acces_token: Annotated[Optional[str], Header()] = None) -> List[Movie]:
+def get_movies(
+    response: Response, 
+    username: Annotated[str, Cookie()],
+    acces_token: Annotated[Optional[str], Header()] = None,
+    ) -> List[Movie]:
+
+    print("cookieeee received", username    )
     response.headers["user-status"] = 'active'
+    response.set_cookie('username', 'dan')
     return movie_service.get_all()
 
 
