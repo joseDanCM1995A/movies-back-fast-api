@@ -1,4 +1,6 @@
-from fastapi import HTTPException
+from typing import Annotated
+
+from fastapi import HTTPException, Header
 from src.models.movie_model import Movie
 from src.data.movies_data import movies
 

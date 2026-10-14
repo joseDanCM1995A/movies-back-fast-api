@@ -4,7 +4,6 @@ from fastapi.requests import Request
 from fastapi.responses import JSONResponse, Response
 from src.routers.movie_router import movie_router 
 from src.routers.user_router import user_router 
-from src.data.users_data import users
 
 app = FastAPI()
 
