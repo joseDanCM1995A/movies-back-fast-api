@@ -4,6 +4,7 @@ from fastapi.requests import Request
 from fastapi.responses import JSONResponse, Response
 from src.routers.movie_router import movie_router 
 from src.routers.user_router import user_router 
+from src.routers.product_router import product_router
 
 app = FastAPI()
 
@@ -20,3 +21,4 @@ async def http_error_handler(request: Request, call_next) -> Response | JSONResp
 app.include_router(router = user_router)
 
 app.include_router(prefix='/movies', router = movie_router)
+app.include_router(prefix='/products', router = product_router)
